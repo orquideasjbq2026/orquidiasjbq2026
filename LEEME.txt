@@ -1,0 +1,70 @@
+ORQUÍDEAS – JARDÍN BOTÁNICO DEL QUINDÍO
+Landing page de venta de orquídeas Phalaenopsis
+================================================
+
+Versión anterior (Claude Design): https://claude.ai/artifact/36mBXLPWzoQj9W2d9rgujN
+
+CONTENIDO DE ESTA CARPETA
+-------------------------
+index.html      Estructura de la página (HTML puro, sin dependencias).
+styles.css      Todos los estilos, organizados por secciones y con variables
+                de color/tipografía al inicio (:root).
+main.js         Toda la lógica: tarjetas de productos, carrito, precios, llave
+                de pago, comprobante, formulario, envío al correo y a WhatsApp,
+                pantalla de gracias y efectos (carga, banner, animaciones).
+assets/         Imágenes y video:
+  logo-verde.png, logo-blanco.png, logo-negro.png
+  video-hero.mp4, video-poster.jpg            -> sección de inicio
+  seccion-regalo-orquidea.jpg                 -> sección "Tu regalo"
+  producto1-rosada.jpg ... producto4-rosa-claro.jpg -> tarjetas de productos
+  orquidea-rosa.png, orquidea-blanca.png, orquidea-lima.png -> pantalla de carga
+  campo-*.png                                 -> fondo desenfocado "Lleva el jardín contigo"
+_respaldo/      Main.dc.html original (formato Claude Design). Se puede borrar.
+
+CÓMO VERLA
+----------
+Abre index.html con un servidor local (por ejemplo la extensión "Live Server"
+de VS Code). Por la política de seguridad (CSP), abrirlo con doble clic puede
+no cargar el main.js en algunos navegadores. En internet publícalo siempre con
+HTTPS (Netlify, GitHub Pages y Vercel lo traen gratis).
+
+AL HACER CAMBIOS
+----------------
+- Si editas styles.css o main.js, sube el número de versión en index.html
+  (styles.css?v=2 -> ?v=3) para que los visitantes no vean la versión vieja.
+- Si agregas un servicio externo nuevo (analítica, otro formulario, etc.),
+  agrégalo a la etiqueta Content-Security-Policy de index.html o será bloqueado,
+  y menciónalo en la política de "Privacidad" de los términos.
+
+SEGURIDAD
+---------
+- main.js es público: nunca pongas contraseñas ni claves secretas ahí.
+  Cifrarlas dentro de la página NO las protege (la llave para descifrarlas
+  también tendría que estar en la página).
+- El correo que recibe los pedidos NO está en el código: está amarrado a la
+  Access Key en el panel de Web3Forms. Nadie puede cambiarlo editando la página.
+  Para cambiarlo, hazlo desde tu cuenta en web3forms.com.
+- La Access Key de Web3Forms es pública por diseño: solo permite ENVIAR
+  mensajes a tu correo, no leerlos ni cambiar el destinatario.
+- Los totales se calculan en el navegador y pueden alterarse: antes de despachar,
+  verifica el comprobante contra la tabla de precios real.
+- El formulario tiene un campo trampa invisible (botcheck) que descarta robots;
+  Web3Forms también lo revisa en su servidor.
+
+DATOS CONFIGURADOS (en main.js, objeto CONFIG al inicio)
+-----------------------------------------------------------
+precios        1 vara $96.000 · 2 varas $105.000 · 3 varas $120.000 COP
+llave          3116400507
+whatsapp       573116400507 (311 640 0507)
+web3formsKey   Access Key de Web3Forms (envío del pedido al correo)
+web3formsPro   true solo con plan Pro: adjunta el comprobante al correo
+Los productos (color, foto, texto alternativo) están en la lista PRODUCTOS.
+
+PENDIENTES
+----------
+- Al publicar: cambiar https://TU-DOMINIO.com por la dirección real en index.html
+  (etiquetas og:url y og:image, para la vista previa al compartir en WhatsApp)
+- Texto de la tienda ([Cuenta aquí cómo cada compra ayuda...] en index.html)
+- Crear la Access Key en web3forms.com con OrquideasJBQ2026@gmail.com y pegarla
+  en CONFIG.web3formsKey (main.js)
+- Comprimir video-hero.mp4 (17 MB) con FFmpeg

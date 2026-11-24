@@ -1,0 +1,7 @@
+# Copia del código original (Claude Design); no hace falta en el repositorio
+_respaldo/
+
+# Archivos del sistema
+Thumbs.db
+desktop.ini
+.DS_Store

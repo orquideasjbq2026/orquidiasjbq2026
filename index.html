@@ -1,0 +1,423 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Seguridad: solo se permite cargar código y recursos de este sitio y de los servicios que usa la página -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: blob:; media-src 'self'; connect-src https://api.web3forms.com; form-action 'self'; base-uri 'self'; object-src 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>Orquídeas – Jardín Botánico del Quindío</title>
+<meta name="description" content="Regala naturaleza, regala vida. Compra orquídeas Phalaenopsis y apoya al Jardín Botánico del Quindío.">
+<meta name="theme-color" content="#144924">
+
+<!-- Íconos de la pestaña y del celular -->
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+
+<!-- Vista previa al compartir el enlace (WhatsApp, Facebook, Instagram, X).
+     ⚠ Al publicar, cambia https://TU-DOMINIO.com por la dirección real de la página:
+     WhatsApp y Facebook solo muestran la foto si la dirección es completa. -->
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_CO">
+<meta property="og:site_name" content="Jardín Botánico del Quindío">
+<meta property="og:title" content="Orquídeas – Jardín Botánico del Quindío">
+<meta property="og:description" content="Regala naturaleza, regala vida. Orquídeas Phalaenopsis desde $96.000 COP con entrega en el Eje Cafetero, Bogotá, Cali y Medellín.">
+<meta property="og:url" content="https://TU-DOMINIO.com/">
+<meta property="og:image" content="https://TU-DOMINIO.com/assets/compartir.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Orquídeas Phalaenopsis fucsia en el Jardín Botánico del Quindío">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,700&amp;family=Inter:ital,wght@0,300;0,400;0,500;0,600;1,700&amp;family=Cormorant+Garamond:ital,wght@1,600&amp;display=swap" rel="stylesheet">
+<!-- Al editar styles.css o main.js, sube el número de ?v= para que los visitantes reciban la versión nueva -->
+<link rel="stylesheet" href="styles.css?v=8">
+<noscript><style>.carga{display:none}</style></noscript>
+<!-- Sin "defer" a propósito: así decide antes de dibujar si muestra la pantalla de carga (solo 1 vez por visita) -->
+<script src="main.js?v=7"></script>
+</head>
+<body>
+
+<!-- ============ PANTALLA DE CARGA (las orquídeas se agregan desde main.js) ============ -->
+<div id="carga" class="carga" role="status" aria-live="polite" aria-label="Cargando la página">
+  <img class="carga-logo" src="assets/logo-verde.png" alt="Jardín Botánico del Quindío – Parque de la biodiversidad">
+</div>
+
+<!-- ============ BANNER (fijo arriba) ============ -->
+<header class="banner-wrap">
+  <nav id="banner" class="banner" aria-label="Principal">
+    <div class="contenedor banner-fila">
+      <a href="#inicio" class="banner-logo"><img src="assets/logo-blanco.png" alt="Jardín Botánico del Quindío – Parque de la biodiversidad"></a>
+      <div class="banner-links">
+        <a href="#inicio">Inicio</a>
+        <a href="#coleccion">Tu regalo</a>
+        <a href="#tienda">Productos</a>
+        <a href="#contacto">Contacto</a>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <!-- ============ INICIO (video) ============ -->
+  <section id="inicio" class="hero">
+    <video class="hero-video" src="assets/video-hero.mp4" poster="assets/video-poster.jpg" autoplay muted loop playsinline preload="auto" aria-hidden="true"></video>
+    <div class="hero-velo"></div>
+    <div class="hero-contenido">
+      <h1><span>Regala naturaleza, regala vida.</span><span>¡Apoya al Jardín Botánico del Quindío!</span></h1>
+    </div>
+  </section>
+
+  <!-- ============ TU REGALO ============ -->
+  <section id="coleccion" class="coleccion">
+    <div class="coleccion-fila">
+      <div id="col-foto" class="col-foto"><img src="assets/seccion-regalo-orquidea.jpg" width="892" height="1402" loading="lazy" decoding="async" alt="Orquídea phalaenopsis blanca con vetas moradas y botones verdes"></div>
+      <div class="coleccion-texto">
+        <h2>Llévate una orquídea y deja <em>florecer</em> tu amor por la naturaleza</h2>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TIENDA (las tarjetas se generan desde main.js) ============ -->
+  <section id="tienda" class="tienda">
+    <div class="contenedor tienda-contenido">
+      <div class="tienda-cabecera">
+        <h2 class="titulo-seccion">Lleva una orquídea a casa</h2>
+        <p>[Cuenta aquí cómo cada compra ayuda al Jardín Botánico.]</p>
+      </div>
+      <div id="productos" class="fila-productos"></div>
+    </div>
+  </section>
+
+  <!-- ============ LLEVA EL JARDÍN CONTIGO ============ -->
+  <section class="contigo">
+    <div id="campo" class="campo" aria-hidden="true"></div>
+    <div class="contigo-velo" aria-hidden="true"></div>
+    <div class="contigo-contenido">
+      <h2>Lleva el jardín contigo</h2>
+      <p>Esta Navidad, compra una linda orquídea y te llevas al Jardín Botánico del Quindío en tu corazón.</p>
+    </div>
+  </section>
+
+  <!-- ============ CONTACTO ============ -->
+  <section id="contacto" class="contacto">
+    <div class="contenedor contacto-contenido">
+      <div class="contacto-intro">
+        <p class="eyebrow">Contacto</p>
+        <h2>¿Tienes alguna pregunta?</h2>
+        <p>Escríbenos sobre tu pedido, las entregas o el cuidado de tu orquídea y te respondemos lo antes posible.</p>
+        <ul class="contacto-canales">
+          <li><a href="https://wa.me/573116400507" target="_blank" rel="noopener">WhatsApp 311 640 0507</a></li>
+          <li><a href="mailto:OrquideasJBQ2026@gmail.com">OrquideasJBQ2026@gmail.com</a></li>
+        </ul>
+      </div>
+
+      <form id="form-contacto" class="form-pedido form-pedido--vidrio">
+        <div class="fila-campos">
+          <div class="campo-form">
+            <label for="contacto-nombre">Nombre</label>
+            <input id="contacto-nombre" name="nombre" required type="text" placeholder="Tu nombre completo" autocomplete="name">
+          </div>
+          <div class="campo-form">
+            <label for="contacto-celular">Número celular</label>
+            <input id="contacto-celular" name="celular" required type="tel" inputmode="tel" placeholder="Ej. 300 123 4567" autocomplete="tel">
+          </div>
+        </div>
+        <div class="campo-form">
+          <label for="contacto-correo">Correo electrónico</label>
+          <input id="contacto-correo" name="correo" required type="email" inputmode="email" placeholder="tucorreo@ejemplo.com" autocomplete="email">
+        </div>
+        <div class="campo-form">
+          <label for="contacto-mensaje">Mensaje</label>
+          <textarea id="contacto-mensaje" name="mensaje" required rows="5" maxlength="1500" placeholder="¿En qué te podemos ayudar?"></textarea>
+        </div>
+
+        <!-- Campo trampa contra robots -->
+        <div class="trampa" aria-hidden="true">
+          <label for="contacto-web">No llenar este campo</label>
+          <input id="contacto-web" name="botcheck" type="text" tabindex="-1" autocomplete="off">
+        </div>
+
+        <label class="check">
+          <input type="checkbox" name="acepta_terminos" required>
+          <span>Autorizo al Jardín Botánico del Quindío a tratar mis datos para responder este mensaje, según los <a href="#terminos" data-accion="abrir-terminos">términos, condiciones y políticas</a>.</span>
+        </label>
+
+        <button type="submit" class="btn-enviar">Enviar mensaje</button>
+        <p id="contacto-ok" class="nota" role="status" hidden>✓ ¡Gracias! Recibimos tu mensaje y te responderemos pronto.</p>
+        <p id="contacto-error" class="aviso" role="alert" hidden>No pudimos enviar tu mensaje. Inténtalo de nuevo o escríbenos por <a href="https://wa.me/573116400507" target="_blank" rel="noopener">WhatsApp</a>.</p>
+      </form>
+    </div>
+  </section>
+
+  <!-- ============ TÉRMINOS Y CONDICIONES (ventana emergente) ============ -->
+  <div id="terminos" class="modal modal--terminos aparece" role="dialog" aria-modal="true" aria-labelledby="terminos-titulo" hidden>
+    <div class="terminos-barra">
+      <button type="button" class="btn-cerrar" data-accion="cerrar-terminos" aria-label="Cerrar términos y condiciones">✕</button>
+    </div>
+    <div class="contenedor terminos-contenido">
+      <div class="terminos-intro">
+        <p class="sobretitulo">Jardín Botánico del Quindío</p>
+        <h2 id="terminos-titulo" class="titulo-seccion">Términos, condiciones y políticas</h2>
+        <p>Al hacer un pedido en este sitio aceptas los siguientes términos y políticas del Jardín Botánico del Quindío, vigentes desde el lanzamiento de este sitio.</p>
+      </div>
+
+      <h3 class="terminos-subtitulo">Términos y condiciones</h3>
+      <div class="tarjetas-legales">
+        <article class="legal">
+          <h3>Pedidos y pagos</h3>
+          <p>Tu pedido queda confirmado cuando recibimos el pago y te avisamos por WhatsApp (311 640 0507) o por correo (OrquideasJBQ2026@gmail.com). Medio de pago: transferencia a la llave que aparece al hacer tu pedido. Los precios están en pesos colombianos.</p>
+        </article>
+        <article class="legal">
+          <h3>Entregas</h3>
+          <p>Entregamos en el Eje Cafetero (Quindío, Risaralda y Caldas), Bogotá, Cali y Medellín en un plazo de 3 días hábiles; el costo del domicilio se informa antes de confirmar. Si eliges recoger en el Jardín Botánico, te avisamos cuando tu orquídea esté lista.</p>
+        </article>
+        <article class="legal">
+          <h3>Cambios y devoluciones</h3>
+          <p>Las orquídeas son plantas vivas: revísala al recibirla. Si llega en mal estado, escríbenos al WhatsApp 311 640 0507 dentro de las 24 horas siguientes con fotos y te la reponemos o te devolvemos el dinero.</p>
+        </article>
+        <article class="legal">
+          <h3>Uso del sitio</h3>
+          <p>Las fotos y textos de este sitio son del Jardín Botánico del Quindío. Los colores de las orquídeas pueden variar un poco respecto a las fotos, porque cada planta es única.</p>
+        </article>
+      </div>
+
+      <h3 class="terminos-subtitulo terminos-subtitulo--sep">Políticas</h3>
+      <div class="tarjetas-legales">
+        <article class="legal">
+          <h3>Tratamiento de datos personales</h3>
+          <p>El Jardín Botánico del Quindío es el responsable de tus datos. Los nombres, teléfonos, correos, direcciones y el comprobante de pago se usan solo para gestionar tu pedido, de acuerdo con la Ley 1581 de 2012. Puedes conocerlos, actualizarlos o pedir que se borren escribiendo a <a href="mailto:OrquideasJBQ2026@gmail.com">OrquideasJBQ2026@gmail.com</a> o al WhatsApp <a href="https://wa.me/573116400507" target="_blank" rel="noopener">311 640 0507</a>.</p>
+        </article>
+        <article class="legal">
+          <h3>Privacidad</h3>
+          <p>No vendemos tus datos. Para procesar tu pedido usamos estos servicios, que reciben solo lo necesario: Web3Forms, que envía tu pedido a nuestro correo (sus servidores están fuera de Colombia); WhatsApp, para confirmar el pedido contigo; y la transportadora que entrega tu orquídea.</p>
+        </article>
+        <article class="legal">
+          <h3>Cuidado y garantía</h3>
+          <p>Cada orquídea incluye recomendaciones de cuidado. La garantía cubre 5 días desde la entrega por problemas de origen; no cubre daños por exceso de riego, sol directo o golpes.</p>
+        </article>
+        <article class="legal">
+          <h3>Cookies</h3>
+          <p>Este sitio no usa cookies propias ni guarda tus datos en tu navegador. Las tipografías se cargan desde Google Fonts, que puede registrar tu dirección IP al visitar la página.</p>
+        </article>
+      </div>
+
+      <p class="terminos-pie">Última actualización: noviembre de 2026 · Dudas: OrquideasJBQ2026@gmail.com · WhatsApp 311 640 0507</p>
+      <button type="button" class="btn btn--blanco" data-accion="cerrar-terminos">Entendido</button>
+    </div>
+  </div>
+</main>
+
+<!-- ============ PIE DE PÁGINA ============ -->
+<footer class="pie">
+  <div class="contenedor pie-contenido">
+    <a href="#inicio" class="pie-logo"><img src="assets/logo-negro.png" alt="Jardín Botánico del Quindío – Parque de la biodiversidad"></a>
+    <div class="pie-datos">
+      <span>Orquídeas · Jardín Botánico del Quindío</span>
+      <a href="mailto:OrquideasJBQ2026@gmail.com">OrquideasJBQ2026@gmail.com</a>
+      <a href="#terminos" class="pie-terminos" data-accion="abrir-terminos">Términos y condiciones</a>
+      <a href="https://www.instagram.com/jardinbotanicoquindio/" target="_blank" rel="noopener" class="pie-red" aria-label="Instagram del Jardín Botánico del Quindío">
+        <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".6" fill="currentColor"/></svg>
+        @jardinbotanicoquindio
+      </a>
+    </div>
+  </div>
+</footer>
+
+<!-- ============ BOTÓN FLOTANTE DEL PEDIDO ============ -->
+<button type="button" id="btn-flotante" class="btn btn-flotante aparece" data-accion="abrir-carrito" hidden>
+  <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 7h12l-1.2 12.1a2 2 0 0 1-2 1.9H9.2a2 2 0 0 1-2-1.9z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg>
+  Mi pedido · <span id="flotante-total"></span>
+</button>
+
+<!-- ============ FINALIZA TU COMPRA (carrito en 2 pasos: datos → pago) ============ -->
+<div id="carrito" class="modal modal--carrito aparece" role="dialog" aria-modal="true" aria-labelledby="compra-titulo" hidden>
+  <div class="carrito-fondo" aria-hidden="true">
+    <img src="assets/campo-rosa-desenfocada-2.png" alt="" loading="lazy">
+    <img src="assets/campo-lima-desenfocada.png" alt="" loading="lazy">
+    <img src="assets/campo-blanca-desenfocada.png" alt="" loading="lazy">
+  </div>
+  <div class="carrito-contenido">
+    <div class="carrito-cabecera">
+      <img src="assets/logo-verde.png" alt="Jardín Botánico del Quindío – Parque de la biodiversidad">
+      <button type="button" class="btn btn--borde" data-accion="seguir-comprando">← Seguir comprando</button>
+    </div>
+    <h2 id="compra-titulo" class="titulo-modal">Finaliza tu compra</h2>
+
+    <!-- Paso 1: pedido + datos de quien compra y de la entrega -->
+    <div id="paso-datos" class="carrito-columnas">
+      <div class="panel-pedido">
+        <p class="eyebrow">Tu pedido (<span id="carrito-resumen"></span>)</p>
+        <div id="carrito-items" class="lista"></div>
+        <div class="fila-total"><span>Total a pagar</span><span id="carrito-total" class="monto"></span></div>
+        <div id="carrito-extra" class="lista">
+          <p class="eyebrow eyebrow--mas">Agrega más a tu pedido</p>
+          <div id="carrito-disponibles" class="disponibles"></div>
+        </div>
+      </div>
+
+      <div class="paso-col">
+        <div class="paso-intro">
+          <p class="eyebrow">Paso 1 de 2 · Tus datos</p>
+          <h3>¿A quién le enviamos la orquídea?</h3>
+          <p>Todos los campos son obligatorios. Al continuar te mostramos el valor y la llave para pagar.</p>
+        </div>
+
+        <form id="form-pedido" class="form-pedido">
+          <p class="eyebrow">Quien compra</p>
+          <div class="fila-campos">
+            <div class="campo-form">
+              <label for="pedido-nombre">Nombre del comprador</label>
+              <input id="pedido-nombre" name="nombre" required type="text" placeholder="Tu nombre completo" autocomplete="name">
+            </div>
+            <div class="campo-form">
+              <label for="pedido-tel-comprador">Número del comprador</label>
+              <input id="pedido-tel-comprador" name="telefono_comprador" required type="tel" inputmode="tel" placeholder="Ej. 300 123 4567" autocomplete="tel">
+            </div>
+          </div>
+          <div class="campo-form">
+            <label for="pedido-correo-comprador">Correo electrónico del comprador</label>
+            <input id="pedido-correo-comprador" name="correo_comprador" required type="email" inputmode="email" placeholder="tucorreo@ejemplo.com" autocomplete="email">
+          </div>
+          <div class="campo-form">
+            <label for="pedido-direccion-comprador">Dirección del comprador</label>
+            <input id="pedido-direccion-comprador" name="direccion_comprador" required type="text" placeholder="Dirección, barrio y ciudad" autocomplete="street-address">
+          </div>
+
+          <p class="eyebrow eyebrow--sep">¿Es para ti?</p>
+          <div class="opciones" role="group" aria-label="¿El pedido es para ti?">
+            <button type="button" class="opcion" data-accion="para-mi" data-valor="si">Sí, es para mí</button>
+            <button type="button" class="opcion" data-accion="para-mi" data-valor="no">No, es para otra persona</button>
+          </div>
+
+          <fieldset id="grupo-recibe" class="grupo">
+            <p class="eyebrow eyebrow--sep">Quien recibe</p>
+            <div class="fila-campos">
+              <div class="campo-form">
+                <label for="pedido-para">Nombre de quien recibe</label>
+                <input id="pedido-para" name="nombre_recibe" required type="text" placeholder="Nombre de la persona que recibe">
+              </div>
+              <div class="campo-form">
+                <label for="pedido-tel-recibe">Número de quien recibe</label>
+                <input id="pedido-tel-recibe" name="telefono_recibe" required type="tel" inputmode="tel" placeholder="Ej. 310 765 4321">
+              </div>
+            </div>
+          </fieldset>
+
+          <p class="eyebrow eyebrow--sep">¿Dónde lo recibe?</p>
+          <div class="opciones" role="group" aria-label="Forma de entrega">
+            <button type="button" class="opcion" data-accion="entrega" data-valor="domicilio">Entrega en una dirección</button>
+            <button type="button" class="opcion" data-accion="entrega" data-valor="jardin">Recibir en el Jardín Botánico</button>
+          </div>
+          <p id="nota-mi-direccion" class="nota" hidden>Lo enviamos a la dirección del comprador que escribiste arriba.</p>
+          <fieldset id="grupo-direccion" class="grupo">
+            <div class="campo-form">
+              <label for="pedido-direccion">Dirección donde se recibe</label>
+              <input id="pedido-direccion" name="direccion" required type="text" placeholder="Dirección, barrio y ciudad" autocomplete="street-address">
+            </div>
+          </fieldset>
+          <div id="nota-jardin" class="nota nota--icono" hidden>
+            <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-5.5-7-11a7 7 0 0 1 14 0c0 5.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+            <p>La orquídea se recoge en el Jardín Botánico del Quindío, en Calarcá. Te escribiremos al número que dejaste para coordinar el día y la hora.</p>
+          </div>
+
+          <!-- Campo trampa contra robots: invisible para personas; si llega lleno, el pedido se descarta -->
+          <div class="trampa" aria-hidden="true">
+            <label for="pedido-web">No llenar este campo</label>
+            <input id="pedido-web" name="botcheck" type="text" tabindex="-1" autocomplete="off">
+          </div>
+
+          <label class="check">
+            <input type="checkbox" name="acepta_terminos" required>
+            <span>Autorizo al Jardín Botánico del Quindío a tratar mis datos para gestionar mi pedido, según los <a href="#terminos" data-accion="abrir-terminos">términos, condiciones y políticas</a>.</span>
+          </label>
+
+          <button type="submit" class="btn-enviar">Continuar al pago →</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Paso 2: valor, llave de pago y comprobante -->
+    <div id="paso-pago" class="paso-pago" hidden>
+      <button type="button" class="btn btn--borde" data-accion="volver-datos">← Volver a mis datos</button>
+      <div class="paso-intro">
+        <p class="eyebrow">Paso 2 de 2 · Paga tu pedido</p>
+        <h3>Ya casi, <span id="pago-nombre"></span></h3>
+        <p>Paga el valor a la llave, sube la foto del comprobante y envía tu pedido.</p>
+      </div>
+
+      <div class="panel-pago">
+        <p class="eyebrow eyebrow--claro">Valor a pagar</p>
+        <p id="pago-total" class="pago-valor"></p>
+        <p class="eyebrow eyebrow--claro">Paga a esta llave</p>
+        <p id="llave" class="pago-llave"></p>
+        <p class="pago-titular">A nombre de: ORQJBQ2026</p>
+        <button type="button" id="btn-copiar" class="btn btn--blanco" data-accion="copiar-llave">Copiar llave</button>
+
+        <div class="comprobante">
+          <p class="eyebrow eyebrow--claro">Comprobante de pago</p>
+          <div id="comp-preview" class="comp-preview" hidden>
+            <img id="comp-img" alt="Vista previa del comprobante de pago" hidden>
+            <span id="comp-nombre"></span>
+            <button type="button" class="btn-quitar btn-quitar--claro" data-accion="quitar-comp">Quitar</button>
+          </div>
+          <label class="btn-subir">
+            <input type="file" id="comp-input" accept="image/*,application/pdf">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 16V4M6 10l6-6 6 6M4 20h16"/></svg>
+            <span id="comp-texto">Subir foto del comprobante</span>
+          </label>
+          <p class="comp-ayuda">Foto o captura de la transferencia (JPG, PNG o PDF).</p>
+        </div>
+      </div>
+
+      <ol class="pasos">
+        <li>Copia la llave y paga desde la app de tu banco o billetera.</li>
+        <li>Sube aquí la foto del comprobante del pago.</li>
+        <li>Toca <strong>Enviar pedido</strong>: se abre WhatsApp para confirmarlo con nosotros.</li>
+      </ol>
+      <p id="aviso-comp" class="aviso" role="alert" hidden>Sube la foto del comprobante de pago para poder enviar tu pedido.</p>
+      <button type="button" class="btn btn--verde btn--grande" data-accion="enviar-pedido">Enviar pedido</button>
+    </div>
+  </div>
+</div>
+
+<!-- ============ GRACIAS POR TU COMPRA ============ -->
+<div id="gracias" class="modal modal--gracias aparece" role="dialog" aria-modal="true" aria-labelledby="gracias-titulo" hidden>
+  <div class="gracias-contenido">
+    <img class="gracias-logo" loading="lazy" src="assets/logo-verde.png" alt="Jardín Botánico del Quindío – Parque de la biodiversidad">
+    <h2 id="gracias-titulo">¡Gracias por tu compra, <span id="gracias-nombre"></span>!</h2>
+    <p class="gracias-codigo">Número de pedido <strong id="gracias-codigo"></strong></p>
+    <p class="gracias-texto">Recibimos tu pedido. Muy pronto nos pondremos en contacto contigo para confirmar el pago y coordinar la entrega.</p>
+    <p class="gracias-dudas">¿Dudas sobre tu pedido? Escríbenos a <a href="mailto:OrquideasJBQ2026@gmail.com">OrquideasJBQ2026@gmail.com</a></p>
+
+    <div class="caja">
+      <p class="eyebrow">Tus orquídeas</p>
+      <div id="gracias-productos" class="lista"></div>
+      <div class="fila-total"><span>Total del pedido</span><span id="gracias-total" class="monto"></span></div>
+    </div>
+
+    <div class="caja caja--datos">
+      <p class="eyebrow">Tus datos</p>
+      <div id="gracias-filas" class="lista"></div>
+    </div>
+
+    <div class="caja-wa">
+      <p><strong>Último paso:</strong> envíanos el pedido por WhatsApp. Si no se abrió solo, toca el botón verde. Luego toca <strong>Enviar comprobante</strong> y elige el chat del Jardín.</p>
+      <a id="gracias-wa" class="btn btn--wa" href="#" target="_blank" rel="noopener">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="#FFFFFF" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.6.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.6 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.2 2.2 2.2 0 0 0 .2-1.2c-.1-.1-.3-.2-.5-.3z"/></svg>
+        Enviar pedido por WhatsApp
+      </a>
+      <button type="button" id="btn-compartir" class="btn btn--compartir" data-accion="compartir-comp" hidden>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1E4D2B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21.4 11.1l-9.2 9.2a6 6 0 0 1-8.5-8.5l9.2-9.2a4 4 0 0 1 5.7 5.7l-9.2 9.2a2 2 0 0 1-2.8-2.8l8.5-8.5"/></svg>
+        Enviar comprobante
+      </button>
+      <p id="comp-sin-share" class="nota-share" hidden>Desde este dispositivo no se puede compartir directo. En el chat de WhatsApp toca el clip 📎 y adjunta la foto del comprobante desde tu galería.</p>
+    </div>
+
+    <button type="button" class="btn btn--oscuro" data-accion="cerrar-gracias">Volver al inicio</button>
+  </div>
+</div>
+
+</body>
+</html>
