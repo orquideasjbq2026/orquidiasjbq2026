@@ -261,6 +261,16 @@ function reiniciarPedido() {
 }
 
 /* ---------- 5. Acciones (clics con data-accion) ---------- */
+/** Menú del banner en celular: abre/cierra (sin argumento alterna). */
+function alternarMenu(abrir) {
+  const banner = $('#banner');
+  const boton = $('.banner-menu');
+  const abierto = abrir ?? !banner.classList.contains('menu-abierto');
+  banner.classList.toggle('menu-abierto', abierto);
+  boton.setAttribute('aria-expanded', abierto);
+  boton.setAttribute('aria-label', abierto ? 'Cerrar menú' : 'Abrir menú');
+}
+
 function abrirCarrito() {
   estado.carritoAbierto = true;
   pintarCarrito();
@@ -290,6 +300,7 @@ function compartirComprobante() {
 }
 
 const acciones = {
+  menu: () => alternarMenu(),
   ajustar(el, id) {
     const tipo = el.closest('.stepper').dataset.tipo;
     estado[tipo][id] = Math.min(TIPOS[tipo].max, Math.max(1, valorDe(tipo, id) + Number(el.dataset.delta)));
@@ -565,6 +576,7 @@ function iniciar() {
   pintarFormulario();
 
   document.addEventListener('click', (e) => {
+    if (e.target.closest('.banner-links a')) alternarMenu(false); // al elegir una sección se cierra el menú
     const el = e.target.closest('[data-accion]');
     if (!el) return;
     const id = Number(el.closest('[data-id]')?.dataset.id);
@@ -572,6 +584,7 @@ function iniciar() {
   });
   document.addEventListener('keydown', (e) => {
     if (e.key !== 'Escape') return;
+    if ($('#banner').classList.contains('menu-abierto')) { alternarMenu(false); return; }
     CERRAR_CON_ESC.find(([sel]) => !$(sel).hidden)?.[1]();
   });
   $('#comp-input').addEventListener('change', (e) => {

@@ -32,10 +32,10 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,700&amp;family=Inter:ital,wght@0,300;0,400;0,500;0,600;1,700&amp;family=Cormorant+Garamond:ital,wght@1,600&amp;display=swap" rel="stylesheet">
 <!-- Al editar styles.css o main.js, sube el número de ?v= para que los visitantes reciban la versión nueva -->
-<link rel="stylesheet" href="styles.css?v=8">
+<link rel="stylesheet" href="styles.css?v=9">
 <noscript><style>.carga{display:none}</style></noscript>
 <!-- Sin "defer" a propósito: así decide antes de dibujar si muestra la pantalla de carga (solo 1 vez por visita) -->
-<script src="main.js?v=7"></script>
+<script src="main.js?v=8"></script>
 </head>
 <body>
 
@@ -49,7 +49,10 @@
   <nav id="banner" class="banner" aria-label="Principal">
     <div class="contenedor banner-fila">
       <a href="#inicio" class="banner-logo"><img src="assets/logo-blanco.png" alt="Jardín Botánico del Quindío – Parque de la biodiversidad"></a>
-      <div class="banner-links">
+      <button type="button" class="banner-menu" data-accion="menu" aria-expanded="false" aria-controls="banner-links" aria-label="Abrir menú">
+        <span></span><span></span><span></span>
+      </button>
+      <div id="banner-links" class="banner-links">
         <a href="#inicio">Inicio</a>
         <a href="#coleccion">Tu regalo</a>
         <a href="#tienda">Productos</a>
